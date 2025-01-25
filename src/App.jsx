@@ -14,14 +14,22 @@ function App() {
 
   useEffect(() => {
     const savedTodos = localStorage.getItem('todos')
-    if (savedTodos) {
-      setTodos(JSON.parse(savedTodos))
-    }
+    const savedDarkMode = localStorage.getItem('darkMode')
+    const savedFilter = localStorage.getItem('filter')
+    const savedSearchQuery = localStorage.getItem('searchQuery')
+
+    if (savedTodos) setTodos(JSON.parse(savedTodos))
+    if (savedDarkMode) setDarkMode(JSON.parse(savedDarkMode))
+    if (savedFilter) setFilter(savedFilter)
+    if (savedSearchQuery) setSearchQuery(savedSearchQuery)
   }, [])
 
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos))
-  }, [todos])
+    localStorage.setItem('darkMode', JSON.stringify(darkMode))
+    localStorage.setItem('filter', filter)
+    localStorage.setItem('searchQuery', searchQuery)
+  }, [todos, darkMode, filter, searchQuery])
 
   const handleSubmit = (e) => {
     e.preventDefault()
