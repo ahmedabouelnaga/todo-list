@@ -2,8 +2,6 @@
 
 A feature-rich, responsive Todo List application built with React and Vite. This application offers a modern, intuitive interface for managing daily tasks with advanced features like dark mode, task categorization, and priority levels.
 
-![Todo List App Screenshot](screenshots/todo-app.png)
-
 ## ✨ Features
 
 - **Modern UI Design**: Clean and intuitive interface with smooth animations
